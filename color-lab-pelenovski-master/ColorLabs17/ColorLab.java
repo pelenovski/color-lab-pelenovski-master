@@ -14,7 +14,26 @@ public class ColorLab
         Picture pic = new Picture("images\\thepic.jpg");
         pic.explore();
         Picture pic1 = new Picture("images\\thepic.jpg");
-        
-        
+        Picture pic2 = new Picture("images\\thepic.jpg");
+
+        Pixel[] pixels;
+        pixels = pic1.getPixels();
+
+        for (Pixel spot: pixels)
+			spot.setBlue(255);
+
+		pic1.explore();
+
+		pixels = pic2.getPixels();
+
+
+
+
+
+
+
+
+
+
     }
 }
