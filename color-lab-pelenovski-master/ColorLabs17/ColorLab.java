@@ -26,6 +26,15 @@ public class ColorLab
 
 		pixels = pic2.getPixels();
 
+		//Negate
+		for (Pixel spot: pixels)
+
+
+
+
+
+
+
 
 
 
