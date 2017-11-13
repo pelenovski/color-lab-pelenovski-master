@@ -14,12 +14,12 @@ public class SheparFaireyLab
      */
     public static void main(String[] args)
     {
-        
+
 
         //opens selfie picture
          /**/
-        String fileName = FileChooser.pickAFile();
-        Picture pictObj = new Picture(fileName);
+        String fileName = FileChooser.pickAFile("images\\mypic.jpeg");
+        Picture pictObj = new Picture("images\\mypic.jpeg");
         pictObj.explore();
 
         //relative path
@@ -29,25 +29,25 @@ public class SheparFaireyLab
         Picture me = new Picture("images/mypic.jpeg");
         Picture me1 = new Picture("images/mypic.jpeg");
         Picture me2 = new Picture("images/mypic.jpeg");
-        
+
         Pixel[] pixels;
         original.explore();
-        
+
         /**
          * method 1 change
          *
          */
-        
+
         pixels = me.getPixels();
-        
+
         for (Pixel object : pixels)
         {
             int redValue = object.getRed();
             int greenValue = object.getGreen();
             int blueValue = object.getBlue();
-            
+
             int avg = (redValue+greenValue+blueValue)/3;
-            
+
             //dark blue color
             if (avg <= 64)
             {
@@ -70,43 +70,43 @@ public class SheparFaireyLab
             }
         }
         me.explore();
-        
+
 
 
         /**
          * method 2 change
          *
          */
-        
+
         pixels = me1.getPixels();
         int minimum = Integer.MIN_VALUE;
         int maximum = Integer.MAX_VALUE;
-        
+
         for (Pixel object : pixels)
         {
             int redValue = object.getRed();
             int greenValue = object.getGreen();
             int blueValue = object.getBlue();
             int avg = (redValue+greenValue+blueValue)/3;
-            
+
             if (avg < minimum)
             {
                 minimum = avg;
             }
-            
+
             if (avg > maximum)
             {
                 maximum = avg;
             }
         }
-        
+
         for (Pixel object : pixels)
         {
             int redValue = object.getRed();
             int greenValue = object.getGreen();
             int blueValue = object.getBlue();
             int avg = (redValue+greenValue+blueValue)/3;
-            
+
             //dark blue color
             if (avg >= minimum && avg < ((maximum-minimum)/4))
             {
@@ -117,8 +117,8 @@ public class SheparFaireyLab
             {
                 object.setColor(Color.red);
             }
-            //light blue color 
-            else if (average>= ( ((max - min) / 4)*2) && average < (((max - min) / 4)*3))
+            //light blue color
+            else if (average>= (((maximum-minimum)/4)*2) && average < (((maximum-minimum)/4)*3))
             {
                 object.setColor(new Color(176,196,222));
             }
@@ -127,45 +127,45 @@ public class SheparFaireyLab
             {
                 object.setColor(new Color(230,230,230));
             }
-         
+
         }
         me1.explore();
-            
-        
-        
+
+
+
         /**
          * custom color palette
          */
-        
+
         pixels = me2.getPixels();
-        
+
         for (Pixel object : pixels)
         {
             int redValue = object.getRed();
             int greenValue = object.getGreen();
             int blueValue = object.getBlue();
             int avg = (redValue+greenValue+blueValue)/3;
-            
+
             if (avg < minimum)
             {
                 minimum = avg;
             }
-            
+
             if (avg > maximum)
             {
                 maximum = avg;
             }
-            
+
         }
-        
+
         for (Pixel object : pixels)
         {
-            int redValue = object.getRed(); 
-            int greenValue = object.getGreen(); 
-            int blueValue = object.getBlue(); 
-            int avg = (redValue+greenValue+blueValue)/3; 
-             
-            if (avg >= minimum && avg < ((maximum-minimum)/4)) 
+            int redValue = object.getRed();
+            int greenValue = object.getGreen();
+            int blueValue = object.getBlue();
+            int avg = (redValue+greenValue+blueValue)/3;
+
+            if (avg >= minimum && avg < ((maximum-minimum)/4))
             {
                 object.setColor(new Color(25,25,115));
             }
@@ -184,24 +184,24 @@ public class SheparFaireyLab
             {
                 object.setColor(new Color(230,230,230));
             }
-         
+
         }
-        
+
         for (Pixel object : pixels)
         {
-            int redValue = object.getRed(); 
-            object.setRed(redValue*2); 
-            
-            int blueValue = object.getBlue(); 
+            int redValue = object.getRed();
+            object.setRed(redValue*2);
+
+            int blueValue = object.getBlue();
             object.setBlue(blueValue*2);
-            
-            int greenValue = object.getGreen(); 
-            object.setGreen(greenValue*2);          
+
+            int greenValue = object.getGreen();
+            object.setGreen(greenValue*2);
         }
         me2.explore();
 
-        
-        
+
+
 
 
     }//main
