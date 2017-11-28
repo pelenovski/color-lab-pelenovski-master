@@ -51,7 +51,7 @@ public class SheparFaireyLab
             //dark blue color
             if (avg <= 64)
             {
-                object.setColor(new Color(25,25,115));
+                object.setColor(new Color(10,1,41));
             }
             //red color
             else if (avg <= 128)
@@ -61,12 +61,12 @@ public class SheparFaireyLab
             //light blue color
             else if (avg <= 198)
             {
-                object.setColor(new Color(176,196,222));
+                object.setColor(new Color(117,106,155));
             }
             //slightly off white color
             else
             {
-                object.setColor(new Color(230,230,230));
+                object.setColor(new Color(192,190,199));
             }
         }
         me.explore();
@@ -110,7 +110,7 @@ public class SheparFaireyLab
             //dark blue color
             if (avg >= minimum && avg < ((maximum-minimum)/4))
             {
-                object.setColor(new Color(25,25,115));
+                object.setColor(new Color(10,1,41));
             }
             //red color
             else if (avg >= ((maximum-minimum)/4) && avg < ((maximum-minimum)/4)*2)
@@ -120,12 +120,12 @@ public class SheparFaireyLab
             //light blue color
             else if (average>= (((maximum-minimum)/4)*2) && average < (((maximum-minimum)/4)*3))
             {
-                object.setColor(new Color(176,196,222));
+                object.setColor(new Color(117,106,155));
             }
             //slighlty off white color
             else
             {
-                object.setColor(new Color(230,230,230));
+                object.setColor(new Color(192,190,199));
             }
 
         }
@@ -164,25 +164,25 @@ public class SheparFaireyLab
             int greenValue = object.getGreen();
             int blueValue = object.getBlue();
             int avg = (redValue+greenValue+blueValue)/3;
-
+            //dark blue color
             if (avg >= minimum && avg < ((maximum-minimum)/4))
             {
-                object.setColor(new Color(25,25,115));
+                object.setColor(new Color(10,1,41));
             }
             //orange color
             else if (avg >= ((maximum-minimum)/4) && avg < ((maximum-minimum)/4)*2)
             {
-                object.setColor(new Color(255,215,0));
+                object.setColor(new Color(255,113,0));
             }
             //brown color
             else if (avg>= ( ((maximum-minimum)/4)*2) && avg < (((maximum-minimum)/4)*3))
             {
-                object.setColor(new Color(255,69,0));
+                object.setColor(new Color(129,80,41));
             }
             //slightly off white color
             else
             {
-                object.setColor(new Color(230,230,230));
+                object.setColor(new Color(192,190,199));
             }
 
         }
